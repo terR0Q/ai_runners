@@ -9,7 +9,7 @@ Prerequisites:
 To set up local AI you first need to get a model from https://huggingface.co/ in GGUF file.
 For example as provided in local llama-service file:
 ```shell
-GIT_LFS_SKIP_SMUDGE=1 git clone https://huggingface.co/Triangle104/Qwen2.5-Coder-7B-Instruct-Q4_K_M-GGUF
+GIT_LFS_SKIP_SMUDGE=1 git clone https://huggingface.co/stefancosma/Qwen2.5-Coder-7B-Instruct-Q4_K_M-GGUF
 cd Qwen2.5-Coder-7B-Instruct-Q4_K_M-GGUF/
 git lfs pull --include="qwen2.5-coder-7b-instruct-q4_k_m.gguf"
 ```
@@ -54,7 +54,7 @@ sudo dnf install https://repo.radeon.com/amdgpu-install/6.2.3/rhel/9.3/amdgpu-in
 sudo amdgpu-install --usecase=rocm,hip --no-dkms
 sudo rm -f /etc/yum.repos.d/amdgpu*.repo
 sudo dnf install rocm-cmake rocm-hip-devel rocm-comgr-devel
-sudo dnf install hipblas rocblas hipblas-devel rocblas-devel
+sudo dnf install vulkan-loader-devel vulkan-tools glslc libshaderc-devel mesa-vulkan-drivers
 ```
 
 Validate installation:
