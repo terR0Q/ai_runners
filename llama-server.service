@@ -5,9 +5,9 @@ After=network.target
 [Service]
 Type=simple
 User=terr0q
-WorkingDirectory=/home/terr0q/llama.cpp/build/bin
-ExecStart=/home/terr0q/llama.cpp/build/bin/llama-server\
-        -m /home/terr0q/llama.models/Qwen2.5-Coder-7B-Instruct-Q4_K_M-GGUF/qwen2.5-coder-7b-instruct-q4_k_m.gguf
+WorkingDirectory=/home/user/llama.cpp/build/bin
+ExecStart=/home/user/llama.cpp/build/bin/llama-server\
+        -m /home/user/llama.models/Qwen2.5-Coder-7B-Instruct-Q4_K_M-GGUF/qwen2.5-coder-7b-instruct-q4_k_m.gguf
          --port 11434 --host 0.0.0.0 -ngl 28 -c 8096 -fa 0 --threads 6
 Restart=on-failure
 RestartSec=5s
