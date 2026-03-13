@@ -1,5 +1,5 @@
 sudo systemctl stop llama-server
-cd ~/llama.cpp
+cd llama.cpp
 git pull
 #cmake -B build -DGGML_CUDA=ON
 cmake -B build \

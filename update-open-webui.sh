@@ -1,5 +1,5 @@
 #!/bin/bash
-cd ~/open-webui
+cd open-webui
 git pull
 sudo docker rm -f open-webui
 sudo docker pull ghcr.io/open-webui/open-webui:main
