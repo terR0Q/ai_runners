@@ -20,19 +20,19 @@ if [ ! -f "$SERVICE_FILE" ]; then
   exit 1
 fi
 
-cp "$SERVICE_FILE" "$DEST"
+sudo cp "$SERVICE_FILE" "$DEST"
 echo "Copied $SERVICE_FILE to $DEST"
 
-systemctl daemon-reload
+sudo systemctl daemon-reload
 echo "Reloaded systemd daemon"
 
-systemctl enable llama-server.service
+sudo systemctl enable llama-server.service
 echo "Enabled llama-server.service"
 
-systemctl start llama-server.service
+sudo systemctl start llama-server.service
 echo "Started llama-server.service"
 
-systemctl status llama-server.service --no-pager
+sudo systemctl status llama-server.service --no-pager
 
 echo "Installing open-webui"
 git clone git@github.com:open-webui/open-webui.git
