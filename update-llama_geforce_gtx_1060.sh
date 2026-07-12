@@ -1,3 +1,4 @@
+#!/bin/bash
 sudo systemctl stop llama-server
 cd llama.cpp
 git pull
