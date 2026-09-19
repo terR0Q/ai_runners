@@ -16,6 +16,9 @@ cmake --build build --config Release --parallel 6 --clean-first
 
 mkdir /srv/llama.models
 # Download models
+# GIT_LFS_SKIP_SMUDGE=1 git clone https://huggingface.co/unsloth/Qwen3.8-27B-GGUF
+# cd Qwen3.8-27B-GGUF
+# git lfs pull --include="Qwen3.8-27B-UD-Q4_K_M.gguf"
 
 SERVICE_FILE="llama-server-router.service"
 DEST="/etc/systemd/system/${SERVICE_FILE}"
