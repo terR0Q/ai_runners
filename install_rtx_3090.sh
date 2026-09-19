@@ -17,7 +17,7 @@ cmake --build build --config Release -j --clean-first
 mkdir /srv/llama.models
 # Download models
 
-SERVICE_FILE="llama-server.service"
+SERVICE_FILE="llama-server-router.service"
 DEST="/etc/systemd/system/${SERVICE_FILE}"
 
 if [ ! -f "$SERVICE_FILE" ]; then
@@ -27,6 +27,15 @@ fi
 
 sudo cp "$SERVICE_FILE" "$DEST"
 echo "Copied $SERVICE_FILE to $DEST"
+
+echo "Making API folder"
+mkdir -p /etc/llama/api-keys
+
+echo "Generating API key"
+openssl rand -hex 32 > /etc/llama/api-keys/key1
+
+echo "Closing external ports leaving for wireguard access on wg0 network"
+sudo ufw allow in on wg0 from 10.2.0.0/24 to any port 11434 proto tcp
 
 sudo systemctl daemon-reload
 echo "Reloaded systemd daemon"

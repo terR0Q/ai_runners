@@ -1,0 +1,22 @@
+[Unit]
+Description=Llama.cpp Server
+After=network.target
+
+[Service]
+Type=simple
+User=terr0q
+WorkingDirectory=/opt/llama.cpp/build/bin
+ExecStart=/opt/llama.cpp/build/bin/llama-server \
+  --host 0.0.0.0 \
+  --port 11434 \
+  --models-dir /srv/llama.models \
+  --no-models-autoload \
+  --jinja \
+  -ngl 999 \
+  -c 8192 \
+  --api-key-file /etc/llama/api-keys
+Restart=on-failure
+RestartSec=5s
+
+[Install]
+WantedBy=multi-user.target
