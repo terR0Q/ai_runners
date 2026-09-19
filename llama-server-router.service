@@ -13,7 +13,6 @@ ExecStart=/opt/llama.cpp/build/bin/llama-server \
   --no-models-autoload \
   --jinja \
   -ngl 999 \
-  -c 8192 \
   --api-key-file /etc/llama/api-keys
 Restart=on-failure
 RestartSec=5s
