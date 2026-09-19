@@ -12,7 +12,7 @@ cmake -B build \
   -DGGML_CUDA=ON \
   -DCMAKE_CUDA_ARCHITECTURES=86 \
   -DCMAKE_BUILD_TYPE=Release
-cmake --build build --config Release -j --clean-first
+cmake --build build --config Release --parallel 6 --clean-first
 
 mkdir /srv/llama.models
 # Download models
