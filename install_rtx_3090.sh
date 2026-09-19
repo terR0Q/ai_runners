@@ -8,7 +8,10 @@ echo "Installing llama.cpp server"
 git clone https://github.com/ggml-org/llama.cpp
 cd llama.cpp
 
-cmake -B build
+cmake -B build \
+  -DGGML_CUDA=ON \
+  -DCMAKE_CUDA_ARCHITECTURES=86 \
+  -DCMAKE_BUILD_TYPE=Release
 cmake --build build --config Release -j --clean-first
 
 cd ..
