@@ -29,10 +29,10 @@ sudo cp "$SERVICE_FILE" "$DEST"
 echo "Copied $SERVICE_FILE to $DEST"
 
 echo "Making API folder"
-mkdir -p /etc/llama/api-keys
+mkdir -p /etc/llama
 
 echo "Generating API key"
-openssl rand -hex 32 > /etc/llama/api-keys/key1
+openssl rand -hex 32 > /etc/llama/api-keys
 
 echo "Closing external ports leaving for wireguard access on wg0 network"
 sudo ufw allow in on wg0 from 10.2.0.0/24 to any port 11434 proto tcp
