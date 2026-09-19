@@ -14,7 +14,8 @@ cmake -B build \
   -DCMAKE_BUILD_TYPE=Release
 cmake --build build --config Release -j --clean-first
 
-cd ..
+mkdir /srv/llama.models
+# Download models
 
 SERVICE_FILE="llama-server.service"
 DEST="/etc/systemd/system/${SERVICE_FILE}"

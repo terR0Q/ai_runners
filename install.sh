@@ -11,7 +11,8 @@ cd llama.cpp
 cmake -B build
 cmake --build build --config Release -j --clean-first
 
-cd ..
+mkdir /srv/llama.models
+# Download models
 
 SERVICE_FILE="llama-server.service"
 DEST="/etc/systemd/system/${SERVICE_FILE}"

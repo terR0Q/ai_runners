@@ -14,7 +14,8 @@ cmake -B build \
   -DGGML_CUDA_FORCE_MMQ=OFF
 cmake --build build --config Release -j2 --clean-first
 
-cd ..
+mkdir /srv/llama.models
+# Download models
 
 SERVICE_FILE="llama-server.service"
 DEST="/etc/systemd/system/${SERVICE_FILE}"
