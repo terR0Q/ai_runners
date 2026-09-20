@@ -32,7 +32,7 @@ mkdir /srv/llama.models
 #   --temp 1.0 --top-p 0.95 --top-k 20 --min-p 0 \
 #   --threads 6 --jinja
 
-SERVICE_FILE="llama-server-router.service"
+SERVICE_FILE="llama-server.service"
 DEST="/etc/systemd/system/${SERVICE_FILE}"
 
 if [ ! -f "$SERVICE_FILE" ]; then

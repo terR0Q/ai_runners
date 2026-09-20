@@ -4,7 +4,7 @@ After=network.target
 
 [Service]
 Type=simple
-User=terr0q
+User=root
 WorkingDirectory=/opt/llama.cpp/build/bin
 ExecStart=/opt/llama.cpp/build/bin/llama-server\
         -m /srv/llama.models/Qwen2.5-Coder-7B-Instruct-Q4_K_M-GGUF/qwen2.5-coder-7b-instruct-q4_k_m.gguf
